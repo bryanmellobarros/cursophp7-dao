@@ -2,12 +2,10 @@
 
 require_once("config.php");
 
-$lista = array(":ID"=>4);
+$root = new Usuario();
 
-$sql = new Sql();
+$root->loadById(3);
 
-$usuarios = $sql->select("SELECT * FROM tb_usuarios WHERE idusuario = :ID",$lista);
-
-echo json_encode($usuarios);
+echo $root;
 
 ?>
